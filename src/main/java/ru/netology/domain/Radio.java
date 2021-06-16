@@ -24,6 +24,10 @@ public class Radio {
     public Radio() {
     }
 
+    public Radio(int maxNumberRadioStation) {
+        this.maxNumberRadioStation = maxNumberRadioStation;
+    }
+
     public String getName() {
         return name;
     }

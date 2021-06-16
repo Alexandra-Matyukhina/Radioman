@@ -21,6 +21,12 @@ class RadioTest {
     }
 
     @Test
+    public void radioMaxChannel(){
+        Radio radio = new Radio(66);
+        assertEquals(66, radio.getMaxNumberRadioStation());
+    }
+
+    @Test
     public void radioName() {
         Radio radio = new Radio("Europa Plus", 10, 0, 0, 100, 0, 0, true);
         assertEquals("Europa Plus", radio.getName());
