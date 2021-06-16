@@ -2,40 +2,58 @@ package ru.netology.domain;
 
 public class Radio {
     private String name;
-    private int maxNumberRadioStation = 9;
+    private int maxNumberRadioStation = 10;
     private int minNumberRadioStation = 0;
     private int currentRadioStation;
-    private int maxSoundVolume = 10;
+    private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
     private int currentSoundVolume;
     private boolean on;
 
-    public String getName() {
-        return name;
+    public Radio(String name, int maxNumberRadioStation, int minNumberRadioStation, int currentRadioStation, int maxSoundVolume, int minSoundVolume, int currentSoundVolume, boolean on) {
+        this.name = name;
+        this.maxNumberRadioStation = maxNumberRadioStation;
+        this.minNumberRadioStation = minNumberRadioStation;
+        this.currentRadioStation = currentRadioStation;
+        this.maxSoundVolume = maxSoundVolume;
+        this.minSoundVolume = minSoundVolume;
+        this.currentSoundVolume = currentSoundVolume;
+        this.on = on;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Radio() {
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getMaxNumberRadioStation() {
         return maxNumberRadioStation;
     }
 
-    public void setMaxNumberRadioStation(int maxNumberRadioStation) {
-        this.maxNumberRadioStation = maxNumberRadioStation;
-    }
-
     public int getMinNumberRadioStation() {
         return minNumberRadioStation;
     }
 
-    public void setMinNumberRadioStation(int minNumberRadioStation) {
-        this.minNumberRadioStation = minNumberRadioStation;
-    }
-
     public int getCurrentRadioStation() {
         return currentRadioStation;
+    }
+
+    public int getMaxSoundVolume() {
+        return maxSoundVolume;
+    }
+
+    public int getMinSoundVolume() {
+        return minSoundVolume;
+    }
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+    public boolean isOn() {
+        return on;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
@@ -45,27 +63,7 @@ public class Radio {
         if(currentRadioStation < minNumberRadioStation){
             currentRadioStation = minNumberRadioStation;
         }
-      this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
-    }
-
-    public void setMaxSoundVolume(int maxSoundVolume) {
-        this.maxSoundVolume = maxSoundVolume;
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public void setMinSoundVolume(int minSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
+        this.currentRadioStation = currentRadioStation;
     }
 
     public void setCurrentSoundVolume(int currentSoundVolume) {
@@ -83,7 +81,7 @@ public class Radio {
             currentRadioStation = minNumberRadioStation;
             return minNumberRadioStation;
         }
-            currentRadioStation ++;
+        currentRadioStation ++;
 
         return currentRadioStation;
     }
@@ -111,14 +109,6 @@ public class Radio {
             return;
         }
         currentSoundVolume --;
-    }
-
-    public boolean isOn() {
-        return on;
-    }
-
-    public void setOn(boolean on) {
-        this.on = on;
     }
 }
 
