@@ -21,6 +21,12 @@ class RadioTest {
     }
 
     @Test
+    public void radioMaxChannel() {
+        Radio radio = new Radio(66);
+        assertEquals(66, radio.getMaxNumberRadioStation());
+    }
+
+    @Test
     public void radioName() {
         Radio radio = new Radio("Europa Plus", 10, 0, 0, 100, 0, 0, true);
         assertEquals("Europa Plus", radio.getName());
@@ -113,6 +119,7 @@ class RadioTest {
         radio.increaseVolume();
         assertEquals(100, radio.getCurrentSoundVolume());
     }
+
     @Test
     public void shouldIncreaseSound3() {
         Radio radio = new Radio();
@@ -144,6 +151,7 @@ class RadioTest {
         radio.decreaseVolume();
         assertEquals(0, radio.getCurrentSoundVolume());
     }
+
     @Test
     public void shouldDecreaseSound3() {
         Radio radio = new Radio();
@@ -162,14 +170,16 @@ class RadioTest {
         radio.prevRadioStation();
         assertEquals(10, radio.getCurrentRadioStation());
     }
+
     @Test
-    public void shouldCheckRange(){
-        Radio radio = new Radio("Europa Plus",40, 0, 28, 10, 0, 0, true);
+    public void shouldCheckRange() {
+        Radio radio = new Radio("Europa Plus", 40, 0, 28, 10, 0, 0, true);
         radio.nextRadioStation();
         assertEquals(29, radio.getCurrentRadioStation());
     }
+
     @Test
-    public void shouldCheckRange2(){
+    public void shouldCheckRange2() {
         Radio radio = new Radio("Maximum", 20, 5, 6, 10, 0, 0, true);
         radio.prevRadioStation();
         assertEquals(5, radio.getCurrentRadioStation());
