@@ -1,5 +1,13 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private String name;
     private int maxNumberRadioStation = 10;
@@ -10,55 +18,11 @@ public class Radio {
     private int currentSoundVolume;
     private boolean on;
 
-    public Radio(String name, int maxNumberRadioStation, int minNumberRadioStation, int currentRadioStation, int maxSoundVolume, int minSoundVolume, int currentSoundVolume, boolean on) {
-        this.name = name;
-        this.maxNumberRadioStation = maxNumberRadioStation;
-        this.minNumberRadioStation = minNumberRadioStation;
-        this.currentRadioStation = currentRadioStation;
-        this.maxSoundVolume = maxSoundVolume;
-        this.minSoundVolume = minSoundVolume;
-        this.currentSoundVolume = currentSoundVolume;
-        this.on = on;
-    }
-
-    public Radio() {
-    }
 
     public Radio(int maxNumberRadioStation) {
         this.maxNumberRadioStation = maxNumberRadioStation;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getMaxNumberRadioStation() {
-        return maxNumberRadioStation;
-    }
-
-    public int getMinNumberRadioStation() {
-        return minNumberRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public boolean isOn() {
-        return on;
-    }
 
     public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > maxNumberRadioStation) {
